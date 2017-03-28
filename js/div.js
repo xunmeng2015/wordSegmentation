@@ -9,8 +9,17 @@ $(function(){
 	xmlhttp.open("GET", "chineseDic1.txt", false);
 	xmlhttp.send();
 	var word = [];
+	var i = 0;
 	xmlhttp.responseText.replace(/.+/g, function(dic){
+//		word[i] = dic.replace(new RegExp(",.*"), "");
+//		word[i].name = dic.replace(new RegExp(".*,"), "");
+//		console.log(i + ' ' + word[i].name);
+//		word[i].key = dic.replace(new RegExp(",.*"), "");
 		word.push(dic.replace(new RegExp(",.*"), ""));
+//		if(i <= 3){
+//		console.log(word[i].key);
+//		}
+		i++;
 	});
 	$(".up_divide").click(function(){				//正向匹配函数
 		$(".analy").empty();
@@ -74,14 +83,16 @@ $(function(){
 					continue;
 				}
 				else if(data.length == 1){
+					
+					$(".analy").append(data + " " + "----->输出");
 					result.push(data);
-					console.log(data + " " + "----->输出");
 					continue;
 				}
 				else{
 					if($.inArray(data, word) != -1){
+						
+						$(".analy").append(data + " " + "----->输出");
 						result.push(data);
-						console.log(data + " " + "----->输出");
 						i = i - data.length;
 						j = len;
 						continue;
