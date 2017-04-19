@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>隐马尔科夫词性标注</title>
+		<style type="text/css">
+			.result{
+				background-color: lightskyblue;
+			}
+			input{
+				width: 800px;
+				height: 30px;
+				font-size: 16px;
+				margin-bottom: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<p>标注文本</p>
+		<input type="text" id="text" disabled="false" value="the bear is on the move." />
+		<p>标注结果</p>
+		<input type="text" id="sign" disabled="false" />
+		<p>分析过程</p>
+		<table border="1">
+			<tr>
+				<th></th>
+				<th>the</th>
+				<th>bear</th>
+				<th>is</th>
+				<th>on</th>
+				<th>the</th>
+				<th>move</th>
+				<th>.</th>
+			</tr>
+			<tr id="AT">
+				<td>AT</td>
+			</tr>
+			<tr id="BEZ">
+				<td>BEZ</td>
+			</tr>
+			<tr id="IN">
+				<td>IN</td>
+			</tr>
+			<tr id="NN">
+				<td>NN</td>
+			</tr>
+			<tr id="VB">
+				<td>VB</td>
+			</tr>
+			<tr id="PERIOD">
+				<td>PERIOD</td>
+			</tr>
+		</table>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script src="js/hmm.js"></script>
+	</body>
+</html>
