@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>句法结构分析</title>
+		<style type="text/css">
+			#text{
+				min-width: 200px;	
+				width: auto;
+				resize: none;
+			}
+			.tree{
+				width: 1000px;
+				min-height: 500px;
+				/*height: auto;*/
+				overflow: scroll;
+			}
+			table{
+				text-align: center;
+			}
+			td, th{
+				padding: 3px;
+			}
+			canvas{
+				height: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<p>请输入需要分析的句子：</p>
+		<textarea rows="10" cols="154" class="text" id="text"></textarea>
+		<button class="ana">分析</button><br /><br />
+		<div class="result" id="result"></div>
+		<br /><br /><div id="tree" class="tree"></div>
+	</body>
+	<script src="echarts/build/dist/echarts.js"></script>
+	<script type="text/javascript" src="js/jquery.js" ></script>
+	<script type="text/javascript" src="js/dp.js" ></script>
+	<script src="js/tree.js"></script>
+</html>
