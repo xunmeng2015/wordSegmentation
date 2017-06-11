@@ -1,0 +1,45 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+    <title>WebSocketTest</title>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+	<script>
+		var data = {};
+		data["key"] = "157fd303a16c465598edc184a5410426";
+		data["info"] = "广州的天气";
+//		console.log(data);
+		$.ajax({
+			type:"post",
+			url:"http://www.tuling123.com/openapi/api",
+			data:JSON.stringify(data),
+			async:false,
+			contentType: "application/json",
+            dataType: "json",
+            success:function(data){
+            	console.log(data);
+            	console.log(data["code"]);
+            	var code = data["code"];
+            	switch (code){
+            		case 100000:		//文本类
+            			break;
+        			case 200000:		//链接类
+        			break;
+        			case 302000:		//新闻类
+        			break;
+        			case 308000:		//菜谱类
+        			break;
+        			case 100000:
+        			break;
+            		default:
+            			break;
+            	}
+            },
+            error:function(err){
+            	console.log(err);
+            }
+		});
+	</script>
+</body>
+</html>

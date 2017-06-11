@@ -66,6 +66,7 @@ function tree() {
                 {
                     name: '根节点',
                     value: 6,
+                    id:6,
                     children: [
                         {
                             name: '节点1',
